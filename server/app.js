@@ -4,11 +4,7 @@ const path = require("path");
 const app = express();
 
 mongoose
-  .connect(
-    "mongodb+srv://" +
-      process.env.DB_USER_PASS +
-      "@datatbase1.thceu56.mongodb.net/"
-  )
+  .connect(process.env.DB_USER_PASS)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Failed to connect to MongoDB", err));
 

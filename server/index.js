@@ -1,4 +1,6 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
+
 const http = require("http");
 const app = require("./app");
 
@@ -7,7 +9,6 @@ app.set("port", port);
 
 const errorHandler = (error) => {
   if (error.syscall !== "listen") throw error;
-  // vérifier spécifiquement si l'erreur est liée à l'appel système de type "listen"
 
   const address = server.address();
   const bind =
